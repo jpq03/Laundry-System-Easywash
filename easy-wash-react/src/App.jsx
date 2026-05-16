@@ -7,6 +7,7 @@ import OrderHistory from './components/OrderHistory';
 import UserSettings from './components/UserSettings';
 import Login from './components/Login';
 import Register from './components/Register';
+import { Toaster } from 'sonner';
 import './index.css';
 
 const DashboardLayout = ({ children }) => (
@@ -33,7 +34,7 @@ const Dashboard = () => {
 
       <div className="status-grid">
         <div className="status-card">
-          <div className="icon-box" style={{ background: '#eff6ff', color: 'var(--primary)' }}><LayoutDashboard /></div>
+          <div className="icon-box" style={{ background: 'rgba(239, 68, 68, 0.1)', color: 'var(--primary)' }}><LayoutDashboard /></div>
           <div>
             <h3 style={{ fontSize: '0.9rem', color: 'var(--text-muted)' }}>Active Orders</h3>
             <p style={{ fontSize: '1.5rem', fontWeight: 800 }}>1</p>
@@ -50,9 +51,8 @@ const Dashboard = () => {
 
 const Sidebar = () => (
   <aside className="sidebar">
-    <div className="logo">
-      <ShieldCheck size={28} />
-      EASY WASH
+    <div className="logo" style={{ padding: '1rem 0', display: 'flex', flexDirection: 'column', alignItems: 'flex-start', gap: '1rem' }}>
+      <img src="/logo.png" alt="Easy Wash Logo" style={{ width: '120px', height: 'auto', borderRadius: '12px' }} />
     </div>
     <div className="sidebar-menu">
       <NavLink to="/" className={({ isActive }) => `menu-item ${isActive ? 'active' : ''}`}>
@@ -74,6 +74,7 @@ const Sidebar = () => (
 function App() {
   return (
     <Router>
+      <Toaster richColors position="top-right" />
       <Routes>
         <Route path="/login" element={<Login />} />
         <Route path="/register" element={<Register />} />

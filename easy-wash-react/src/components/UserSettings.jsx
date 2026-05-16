@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import { User, MapPin, Settings as SettingsIcon, Shield, Edit2, Plus } from 'lucide-react';
+import { toast } from 'sonner';
 
 const UserSettings = () => {
   const [activeTab, setActiveTab] = useState('profile');
@@ -34,10 +35,15 @@ const UserSettings = () => {
         {activeTab === 'profile' && (
           <div className="settings-section active">
             <div style={{ display: 'flex', alignItems: 'center', gap: '2rem', marginBottom: '2rem' }}>
-              <div style={{ width: '80px', height: '80px', background: '#eff6ff', borderRadius: '50%', display: 'flex', alignItems: 'center', justifyContent: 'center', fontSize: '1.5rem', fontWeight: 800, color: 'var(--primary)' }}>JQ</div>
+              <div style={{ width: '80px', height: '80px', background: 'rgba(239, 68, 68, 0.1)', borderRadius: '50%', display: 'flex', alignItems: 'center', justifyContent: 'center', fontSize: '1.5rem', fontWeight: 800, color: 'var(--primary)' }}>JQ</div>
               <button className="btn-primary" style={{ background: 'white', color: 'var(--primary)', border: '2px solid var(--primary)', boxShadow: 'none' }}>Change Photo</button>
             </div>
-            <form>
+            <form onSubmit={(e) => {
+              e.preventDefault();
+              toast.success('Profile Updated!', {
+                description: 'Your account settings have been saved.',
+              });
+            }}>
               <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '1.5rem' }}>
                 <div className="form-group">
                   <label>Full Name</label>

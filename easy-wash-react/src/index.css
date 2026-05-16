@@ -1,13 +1,13 @@
 :root {
-    --primary: #3b82f6; /* Vibrant Blue */
-    --primary-hover: #2563eb;
-    --secondary: #0ea5e9; /* Sky Blue */
-    --background: #f8fafc; /* Fresh White/Grey */
-    --surface: #ffffff;
-    --text-dark: #0f172a;
-    --text-muted: #64748b;
-    --accent: #10b981; /* Fresh Green */
-    --card-shadow: 0 10px 25px -5px rgba(59, 130, 246, 0.1), 0 8px 10px -6px rgba(59, 130, 246, 0.1);
+    --primary: #ef4444; /* Vibrant Red */
+    --primary-hover: #dc2626;
+    --secondary: #991b1b; /* Deep Red */
+    --background: #0f172a; /* Dark Navy/Black */
+    --surface: #1e293b; /* Dark Slate */
+    --text-dark: #f8fafc; /* White/Light Grey */
+    --text-muted: #94a3b8; /* Slate Grey */
+    --accent: #ef4444; 
+    --card-shadow: 0 10px 25px -5px rgba(239, 68, 68, 0.1), 0 8px 10px -6px rgba(239, 68, 68, 0.1);
 }
 
 * {
@@ -30,12 +30,12 @@ nav {
     justify-content: space-between;
     align-items: center;
     padding: 1.5rem 10%;
-    background: rgba(255, 255, 255, 0.8);
+    background: rgba(15, 23, 42, 0.8);
     backdrop-filter: blur(10px);
     position: sticky;
     top: 0;
     z-index: 100;
-    border-bottom: 1px solid #e2e8f0;
+    border-bottom: 1px solid #334155;
 }
 
 .logo {
@@ -72,7 +72,7 @@ nav {
     text-decoration: none;
     font-weight: 700;
     transition: all 0.3s;
-    box-shadow: 0 4px 14px rgba(59, 130, 246, 0.4);
+    box-shadow: 0 4px 14px rgba(239, 68, 68, 0.4);
 }
 
 .btn-primary:hover {
@@ -138,17 +138,17 @@ nav {
     display: flex;
     justify-content: center;
     align-items: center;
-    background: linear-gradient(135deg, #eff6ff 0%, #dbeafe 100%);
+    background: radial-gradient(circle at top right, #450a0a, var(--background));
     padding: 2rem;
 }
 
 .auth-card {
-    background: white;
+    background: var(--surface);
     padding: 3rem;
     border-radius: 32px;
     width: 100%;
     max-width: 450px;
-    box-shadow: 0 25px 50px -12px rgba(59, 130, 246, 0.2);
+    box-shadow: 0 25px 50px -12px rgba(239, 68, 68, 0.2);
     text-align: center;
 }
 
@@ -187,8 +187,8 @@ nav {
 
 .sidebar {
     width: 280px;
-    background: white;
-    border-right: 1px solid #e2e8f0;
+    background: var(--surface);
+    border-right: 1px solid #334155;
     padding: 2rem;
     display: flex;
     flex-direction: column;
@@ -214,14 +214,14 @@ nav {
 }
 
 .menu-item.active, .menu-item:hover {
-    background: #eff6ff;
+    background: rgba(239, 68, 68, 0.1);
     color: var(--primary);
 }
 
 .main-content {
     flex: 1;
     padding: 3rem;
-    background-color: #f8fafc;
+    background-color: var(--background);
 }
 
 .status-grid {
@@ -232,7 +232,7 @@ nav {
 }
 
 .status-card {
-    background: white;
+    background: var(--surface);
     padding: 1.5rem;
     border-radius: 20px;
     box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05);
@@ -252,7 +252,7 @@ nav {
 
 /* Order Timeline */
 .timeline-container {
-    background: white;
+    background: var(--surface);
     padding: 2.5rem 2rem;
     border-radius: 24px;
     box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05);
@@ -309,8 +309,8 @@ nav {
     width: 54px;
     height: 54px;
     border-radius: 50%;
-    background: white;
-    border: 4px solid #f1f5f9;
+    background: var(--surface);
+    border: 4px solid #334155;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -369,7 +369,7 @@ nav {
 }
 
 .modal-content {
-    background: white;
+    background: var(--surface);
     width: 100%;
     max-width: 650px;
     border-radius: 32px;
@@ -467,7 +467,7 @@ nav {
 
 .order-table {
     width: 100%;
-    background: white;
+    background: var(--surface);
     border-radius: 24px;
     overflow: hidden;
     box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05);
@@ -686,7 +686,7 @@ nav {
 }
 
 .settings-card {
-    background: white;
+    background: var(--surface);
     padding: 2.5rem;
     border-radius: 24px;
     box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05);

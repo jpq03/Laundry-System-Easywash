@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import { X, WashingMachine, Shirt, Wind, Star, Calendar, Clock } from 'lucide-react';
+import { toast } from 'sonner';
 
 const NewOrderModal = ({ isOpen, onClose }) => {
   const [step, setStep] = useState(1);
@@ -62,8 +63,21 @@ const NewOrderModal = ({ isOpen, onClose }) => {
             style={{ background: '#f1f5f9', color: 'var(--text-muted)', visibility: step === 1 ? 'hidden' : 'visible' }}
             onClick={prevStep}
           >Back</button>
-          <button className="btn-primary" onClick={step === 4 ? onClose : nextStep}>
-            {step === 4 ? 'Confirm Order' : 'Next Step'}
+          <button 
+            className="btn-primary" 
+            onClick={() => {
+              if (step === 2) {
+                toast.success('Order Placed Successfully!', {
+                  description: 'Our driver will pick up your laundry at the scheduled time.',
+                });
+                setStep(1);
+                onClose();
+              } else {
+                nextStep();
+              }
+            }}
+          >
+            {step === 2 ? 'Confirm Order' : 'Next Step'}
           </button>
         </div>
       </div>

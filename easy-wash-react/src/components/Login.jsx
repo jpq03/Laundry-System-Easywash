@@ -14,11 +14,8 @@ const Login = () => {
   return (
     <div className="auth-container">
       <div className="auth-card">
-        <Link to="/" style={{ textDecoration: 'none', display: 'inline-block', marginBottom: '2rem' }}>
-          <div className="logo" style={{ justifyContent: 'center' }}>
-            <ShieldCheck size={28} strokeWidth={3} />
-            EASY WASH
-          </div>
+        <Link to="/" style={{ textDecoration: 'none', display: 'flex', justifyContent: 'center', marginBottom: '2rem' }}>
+          <img src="/logo.png" alt="Easy Wash Logo" style={{ width: '150px', height: 'auto', borderRadius: '16px' }} />
         </Link>
         
         <h2 style={{ fontSize: '2rem', marginBottom: '0.5rem' }}>Welcome Back</h2>
