@@ -34,7 +34,7 @@ const Dashboard = () => {
 
       <div className="status-grid">
         <div className="status-card">
-          <div className="icon-box" style={{ background: 'rgba(239, 68, 68, 0.1)', color: 'var(--primary)' }}><LayoutDashboard /></div>
+          <div className="icon-box" style={{ background: 'rgba(45, 212, 191, 0.1)', color: 'var(--primary)' }}><LayoutDashboard /></div>
           <div>
             <h3 style={{ fontSize: '0.9rem', color: 'var(--text-muted)' }}>Active Orders</h3>
             <p style={{ fontSize: '1.5rem', fontWeight: 800 }}>1</p>
@@ -64,7 +64,7 @@ const Sidebar = () => (
       <NavLink to="/settings" className={({ isActive }) => `menu-item ${isActive ? 'active' : ''}`}>
         <Settings size={20} /> Settings
       </NavLink>
-      <NavLink to="/logout" className="menu-item" style={{ marginTop: 'auto', color: '#ef4444' }}>
+      <NavLink to="/logout" className="menu-item" style={{ marginTop: 'auto', color: '#94a3b8' }}>
         <LogOut size={20} /> Logout
       </NavLink>
     </div>
