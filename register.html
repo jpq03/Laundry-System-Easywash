@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sign Up | Easy Wash</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;700;800;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="auth-container">
+        <div class="auth-card" style="max-width: 500px;">
+            <a href="index.html" style="text-decoration: none; display: inline-block; margin-bottom: 2rem;">
+                <div class="logo" style="justify-content: center;">
+                    <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path></svg>
+                    EASY WASH
+                </div>
+            </a>
+            
+            <h2 style="font-size: 2rem; margin-bottom: 0.5rem;">Create Account</h2>
+            <p style="color: var(--text-muted); margin-bottom: 2.5rem;">Experience premium laundry care today</p>
+
+            <form id="register-form">
+                <div class="form-group">
+                    <label for="fullname">Full Name</label>
+                    <input type="text" id="fullname" placeholder="Joseph Quisido" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="email">Email Address</label>
+                    <input type="email" id="email" placeholder="name@example.com" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="city">Service Area</label>
+                    <select id="city" required>
+                        <option value="" disabled selected>Select Your City</option>
+                        <option value="mandaue">Mandaue City</option>
+                        <option value="lapulapu">Lapu-Lapu City</option>
+                        <option value="cebu">Cebu City</option>
+                    </select>
+                </div>
+                
+                <div class="form-group">
+                    <label for="password">Password</label>
+                    <input type="password" id="password" placeholder="••••••••" required>
+                </div>
+
+                <button type="submit" class="btn-primary" style="width: 100%; border: none; padding: 1rem; cursor: pointer; font-size: 1rem; margin-top: 1rem;">Create Account</button>
+            </form>
+
+            <div style="margin-top: 2rem; color: var(--text-muted);">
+                Already have an account? <a href="login.html" style="color: var(--primary); text-decoration: none; font-weight: 700;">Sign in</a>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
