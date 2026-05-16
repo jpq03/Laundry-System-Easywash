@@ -16,23 +16,23 @@ const OrderTimeline = () => {
         </div>
 
         <div className="step completed">
-          <div className="step-icon"><WashingMachine size={20} /></div>
+          <div className="step-icon"><Truck size={20} /></div>
           <span className="step-label">Picked Up</span>
         </div>
 
         <div className="step active">
-          <div className="step-icon"><ShieldCheck size={20} /></div>
+          <div className="step-icon"><WashingMachine size={20} /></div>
           <span className="step-label">Washing</span>
         </div>
 
         <div className="step">
-          <div className="step-icon" style={{ transform: 'rotate(-10deg)' }}>$</div>
+          <div className="step-icon" style={{ opacity: 0.5 }}>♨️</div>
           <span className="step-label">Drying</span>
         </div>
 
         <div className="step">
-          <div className="step-icon"><Truck size={20} /></div>
-          <span className="step-label">Out for Delivery</span>
+          <div className="step-icon"><ShieldCheck size={20} /></div>
+          <span className="step-label">Ready</span>
         </div>
       </div>
     </div>

@@ -1,14 +1,34 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
-import { ShieldCheck } from 'lucide-react';
+import { supabase } from '../lib/supabaseClient';
+import { toast } from 'sonner';
+import { Loader2, Mail, Lock } from 'lucide-react';
 
 const Login = () => {
+  const [email, setEmail] = useState('');
+  const [password, setPassword] = useState('');
+  const [loading, setLoading] = useState(false);
   const navigate = useNavigate();
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
-    // Simulate login
-    navigate('/');
+    setLoading(true);
+
+    try {
+      const { error } = await supabase.auth.signInWithPassword({
+        email,
+        password,
+      });
+
+      if (error) throw error;
+
+      toast.success('Welcome back!');
+      navigate('/');
+    } catch (error) {
+      toast.error(error.message);
+    } finally {
+      setLoading(false);
+    }
   };
 
   return (
@@ -23,17 +43,36 @@ const Login = () => {
 
         <form onSubmit={handleSubmit}>
           <div className="form-group">
-            <label htmlFor="email">Email Address</label>
-            <input type="email" id="email" placeholder="name@example.com" required />
+            <label htmlFor="email"><Mail size={16} /> Email Address</label>
+            <input 
+              type="email" 
+              id="email" 
+              placeholder="name@example.com" 
+              value={email}
+              onChange={(e) => setEmail(e.target.value)}
+              required 
+            />
           </div>
           
           <div className="form-group">
-            <label htmlFor="password">Password</label>
-            <input type="password" id="password" placeholder="••••••••" required />
+            <label htmlFor="password"><Lock size={16} /> Password</label>
+            <input 
+              type="password" 
+              id="password" 
+              placeholder="••••••••" 
+              value={password}
+              onChange={(e) => setPassword(e.target.value)}
+              required 
+            />
           </div>
 
-          <button type="submit" className="btn-primary" style={{ width: '100%', border: 'none', padding: '1rem', cursor: 'pointer', fontSize: '1rem', marginTop: '1rem' }}>
-            Sign In
+          <button 
+            type="submit" 
+            className="btn-primary" 
+            disabled={loading}
+            style={{ width: '100%', border: 'none', padding: '1rem', cursor: 'pointer', fontSize: '1rem', marginTop: '1rem' }}
+          >
+            {loading ? <Loader2 className="animate-spin" /> : 'Sign In'}
           </button>
         </form>
 
