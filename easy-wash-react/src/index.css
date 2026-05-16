@@ -222,6 +222,88 @@ nav {
     flex: 1;
     padding: 3rem;
     background-color: var(--background);
+    min-height: 100vh;
+}
+
+/* Mobile Header & Drawer */
+.mobile-header {
+    display: none;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem 1.5rem;
+    background: var(--surface);
+    border-bottom: 1px solid #334155;
+    position: sticky;
+    top: 0;
+    z-index: 50;
+}
+
+.menu-toggle, .close-menu {
+    background: transparent;
+    border: none;
+    color: var(--text-dark);
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+}
+
+.sidebar-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 2rem;
+}
+
+.close-menu {
+    display: none;
+}
+
+.menu-backdrop {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5);
+    backdrop-filter: blur(4px);
+    z-index: 100;
+}
+
+@media (max-width: 1024px) {
+    .dashboard-layout {
+        flex-direction: column;
+    }
+    
+    .mobile-header {
+        display: flex;
+    }
+    
+    .sidebar {
+        position: fixed;
+        top: 0;
+        left: 0;
+        bottom: 0;
+        z-index: 1000;
+        width: 300px !important;
+        height: 100vh;
+        box-shadow: 20px 0 50px rgba(0,0,0,0.5);
+        display: flex !important;
+    }
+    
+    .close-menu {
+        display: flex;
+        background: rgba(255,255,255,0.05);
+        padding: 0.5rem;
+        border-radius: 50%;
+    }
+    
+    .main-content {
+        padding: 1.5rem;
+    }
+    
+    .mobile-nav {
+        display: none !important; /* Hide old bottom nav in favor of hamburger */
+    }
 }
 
 .status-grid {
